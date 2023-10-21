@@ -5,10 +5,13 @@ Sinatraで作成した単純シンプルなメモアプリです。メモの作�
 ```
 git clone https://github.com/matuaya/memo-app.git
 ```
-必要なGemのインストール
+ディレクトリに移動
 ```
-bundle init
-bundle install
+cd memo-app 
+```
+ブランチを変更
+```
+git checkout memo-app
 ```
 プログラムを実行
 ```
