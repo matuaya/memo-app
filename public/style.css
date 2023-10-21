@@ -1,0 +1,117 @@
+@charset "utf-8";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  color: #333;
+}
+.logo_link, .memo_link {
+  display:block;
+  color: #333;
+  text-decoration: none;
+}
+.memo_link:hover {
+  color: #a09e9e;
+}
+.logo {
+  font-size: 2.5em;
+  font-family: "Gill Sans Extrabold", sans-serif;
+  margin: 50px 0px 20px;
+  padding: 0px 200px;
+  border-top: 5px solid #b7b3b3;
+  color: #333;
+}
+.error-number {
+  display: inline-block;
+  font-size: 3em;
+  width: 150px;
+  text-align: center;
+}
+.error-text {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+.error-message {
+  padding-left: 30px;
+}
+h2 {
+  font-size: 1em;
+  text-align: center;
+  border-bottom: 2px solid #d1cfcf;
+}
+.main {
+  width: 600px;
+  margin: 0px auto;
+  position: relative;
+}
+ul {
+  position: absolute;
+  top: -20px;
+  left: -140px;
+}
+
+li {
+  margin-top: 15px;
+  padding: 3px 3px 3px 10px;
+  width: 400px;
+  border-bottom: 2px solid #e2e2e2;
+  list-style: none;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.add-form {
+  position: absolute;
+    top: -77px;
+    left: 350px;
+}
+.button {
+  padding: 10px 20px;
+  display: block;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #605f5f;
+  letter-spacing: 0.3em;
+  text-align: center;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #888787;
+}
+input[type="text"], textarea {
+  display: block;
+  width: 530px;
+  border: 2.5px solid #868585;
+}
+input[type="text"] {
+  margin-bottom: 30px;
+  height: 40px;
+  font-size: 1.2em;
+  border-radius: 7px;
+}
+textarea {
+  margin-bottom: 15px;
+  height: 300px;
+  border-radius: 7px;
+  font-size: 1.2em;
+}
+.save-form, .edit-form {
+  position: relative;
+}
+.save-form input[type="submit"], .edit-form input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  left: 455px;
+}
+.delete-form, .modify-form {
+  display: inline-block;
+  margin: 150px 0px 0px 140px;
+}
