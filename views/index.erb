@@ -1,0 +1,10 @@
+<ul>
+  <% unless @memos.nil? %>
+    <% @memos.each do |id, v| %>
+      <li><a class="memo_link" href="/memos/<%= id %>"><%= v["title"] %></a></li>
+    <% end %>
+  <% end %>
+</ul>
+<form class="add-form" method="get" action="/memos/new">
+  <input class="button" type="submit" value="追加">
+</form>

@@ -1,0 +1,9 @@
+<h2><%= @title %></h2>
+<p><%= @content %></p>
+<form class="delete-form" method="post" action="/memos/<%= @id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input class="button" type="submit" value="削除">
+</form>
+<form class="modify-form" method="get" action="/memos/edit/<%= @id %>">
+  <input class="button" type="submit" value="変更">
+</form>
