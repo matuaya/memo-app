@@ -1,6 +1,6 @@
 <form class="edit-form" method="post" action="/memos/<%= @id %>">
-  <input type="text" name="title" value="<%= @title %>">
-  <textarea name="content"><%= @content %></textarea>
+  <input type="text" name="title" value="<%= html_escape(@memo['title']) %>">
+  <textarea name="content"><%= html_escape(@memo['content']) %></textarea>
   <input type="hidden" name="_method" value="patch">
   <input class="button" type="submit" value="保存">
 </form>
