@@ -1,5 +1,5 @@
-<h2><%= @title %></h2>
-<p><%= @content %></p>
+<h2><%= html_escape(@memo['title']) %></h2>
+<p><%= html_escape(@memo['content']) %></p>
 <form class="delete-form" method="post" action="/memos/<%= @id %>">
   <input type="hidden" name="_method" value="delete">
   <input class="button" type="submit" value="削除">
