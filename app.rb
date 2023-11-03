@@ -52,8 +52,7 @@ end
 
 def create_data(current_data, new_memo)
   # 生成されたメモに連番のIDを与える
-  next_id = current_data.keys.map(&:to_i).max + 1 if current_data.any?
-  id = next_id || 1
+  id = current_data.any? ? current_data.keys.map(&:to_i).max + 1 : 1
   current_data[id] = new_memo
   current_data
 end
