@@ -15,7 +15,7 @@ helpers do
 end
 
 get '/' do
-  result = conn.exec('SELECT * FROM memos')
+  result = conn.exec('SELECT * FROM memos ORDER BY id')
   @memos = result.map { |table_row| table_row }
   erb :index
 end
