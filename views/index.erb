@@ -1,7 +1,7 @@
 <ul>
   <% unless @memos.nil? %>
-    <% @memos.each do |id, user_input| %>
-      <li><a class="memo_link" href="/memos/<%= id %>"><%= html_escape(user_input["title"]) %></a></li>
+    <% @memos.each do |memo| %>
+      <li><a class="memo_link" href="/memos/<%= memo['id'] %>"><%= html_escape(memo["title"]) %></a></li>
     <% end %>
   <% end %>
 </ul>
