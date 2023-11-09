@@ -16,7 +16,7 @@ end
 
 get '/' do
   result = conn.exec('SELECT * FROM memos ORDER BY id')
-  @memos = result.map { |table_row| table_row }
+  @memos = result.map.to_a
   erb :index
 end
 
@@ -38,7 +38,7 @@ get '/memos/new' do
 end
 
 get '/memos/:id' do
-  memo = conn.exec("SELECT * FROM memos WHERE id = '#{params[:id]}'")
+  memo = conn.exec_params('SELECT * FROM memos WHERE id = $1', [params[:id]])
   @memo = memo[0]
 
   return erb :error if !@memo
@@ -47,13 +47,13 @@ get '/memos/:id' do
 end
 
 delete '/memos/:id' do
-  conn.exec("DELETE FROM memos WHERE id = #{params[:id]}")
+  conn.exec_params('DELETE FROM memos WHERE id = $1', [params[:id]])
 
   redirect to('/')
 end
 
 get '/memos/edit/:id' do
-  memo = conn.exec("SELECT * FROM memos WHERE id = '#{params[:id]}'")
+  memo = conn.exec('SELECT * FROM memos WHERE id = $1', [params[:id]])
   @memo = memo[0]
 
   return erb :error if !@memo
@@ -62,8 +62,8 @@ get '/memos/edit/:id' do
 end
 
 patch '/memos/:id' do
-  sql = "UPDATE memos SET(title, content) = ($1, $2) WHERE id = '#{params[:id]}'"
-  conn.exec_params(sql, [params[:title], params[:content]])
+  sql = 'UPDATE memos SET(title, content) = ($1, $2) WHERE id = $3'
+  conn.exec_params(sql, [params[:title], params[:content], params[:id]])
 
   redirect to('/')
 end
